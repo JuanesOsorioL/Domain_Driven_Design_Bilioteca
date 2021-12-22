@@ -30,11 +30,11 @@ public class PersonaChange extends EventChange {
         });
 
         apply((EmpleadoQuitado event) -> {
-            persona.Empleado.removeIf(Empleado -> Empleado.empleadoId().equals(event.getEmpleadoId()));
+            persona.Empleado.removeIf(Empleado -> Empleado.identity().equals(event.getEmpleadoId()));
         });
 
         apply((UsuarioQuitado event) -> {
-            persona.Usuario.removeIf(Usuario -> Usuario.usuarioId().equals(event.getUsuarioId()));
+            persona.Usuario.removeIf(Usuario -> Usuario.identity().equals(event.getUsuarioId()));
         });
 
         apply((EmpleadoFuncionModificado event) -> {

@@ -1,8 +1,7 @@
 package co.com.sofka.Estanteria;
 
 import co.com.sofka.Estanteria.value.*;
-import co.com.sofka.Generico.Entity;
-
+import co.com.sofka.domain.generic.Entity;
 import java.util.Objects;
 
 public class Revista extends Entity<RevistaId> {
@@ -27,19 +26,19 @@ public class Revista extends Entity<RevistaId> {
         this.nombre = Objects.requireNonNull(nombre);
     }
 
-    public RevistaId getRevistaId() {
+    public RevistaId revistaId() {
         return revistaId;
     }
 
-    public Autor getAutor() {
+    public Autor autor() {
         return autor;
     }
 
-    public Categoria getCategoria() {
+    public Categoria categoria() {
         return categoria;
     }
 
-    public Nombre getNombre() {
+    public Nombre nombre() {
         return nombre;
     }
 }

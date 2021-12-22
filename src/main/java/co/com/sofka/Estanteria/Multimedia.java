@@ -1,9 +1,7 @@
 package co.com.sofka.Estanteria;
 
 import co.com.sofka.Estanteria.value.*;
-import co.com.sofka.Generico.Entity;
-
-
+import co.com.sofka.domain.generic.Entity;
 import java.util.Objects;
 
 public class Multimedia extends Entity<MultimediaId> {
@@ -28,19 +26,19 @@ public class Multimedia extends Entity<MultimediaId> {
         this.nombre = Objects.requireNonNull(nombre);
     }
 
-    public MultimediaId getMultimediaId() {
+    public MultimediaId multimediaId() {
         return multimediaId;
     }
 
-    public Autor getAutor() {
+    public Autor autor() {
         return autor;
     }
 
-    public Categoria getCategoria() {
+    public Categoria categoria() {
         return categoria;
     }
 
-    public Nombre getNombre() {
+    public Nombre nombre() {
         return nombre;
     }
 }

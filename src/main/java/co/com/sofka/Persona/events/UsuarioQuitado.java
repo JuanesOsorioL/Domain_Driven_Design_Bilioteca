@@ -4,7 +4,7 @@ import co.com.sofka.Persona.values.UsuarioId;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class UsuarioQuitado extends DomainEvent {
-    private UsuarioId usuarioId;
+    private final UsuarioId usuarioId;
 
     public UsuarioQuitado(UsuarioId usuarioId) {
         super("sofka.Usuario.UsuarioQuitado");

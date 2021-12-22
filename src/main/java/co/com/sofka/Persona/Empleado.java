@@ -7,7 +7,6 @@ import java.util.Objects;
 
 public class Empleado extends Entity<EmpleadoId> {
 
-    private EmpleadoId empleadoId;
     private Funcion funcion;
 
     public Empleado(EmpleadoId empleadoId, Funcion funcion) {
@@ -17,10 +16,6 @@ public class Empleado extends Entity<EmpleadoId> {
 
     public void modificarFuncion(Funcion funcion){
         this.funcion = Objects.requireNonNull(funcion);
-    }
-
-    public EmpleadoId empleadoId() {
-        return empleadoId;
     }
 
     public Funcion funcion() {

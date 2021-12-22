@@ -2,9 +2,17 @@ package co.com.sofka.Estanteria.value;
 
 import co.com.sofka.domain.generic.ValueObject;
 
+import java.util.Objects;
+
 public class Nombre implements ValueObject<String> {
+    private String nombre;
+
+    public Nombre(String nombre) {
+        this.nombre = Objects.requireNonNull(nombre,"El nombre es requerido");
+    }
+
     @Override
     public String value() {
-        return null;
+        return nombre;
     }
 }

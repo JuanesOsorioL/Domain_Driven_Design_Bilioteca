@@ -9,7 +9,6 @@ import java.util.Objects;
 
 public class Usuario extends Entity<UsuarioId> {
 
-    private UsuarioId usuarioId;
     private Nikname nikname;
     private Password password;
 
@@ -25,10 +24,6 @@ public class Usuario extends Entity<UsuarioId> {
 
     public void cambiarPassword(Password password){
         this.password = Objects.requireNonNull(password);
-    }
-
-    public UsuarioId usuarioId() {
-        return usuarioId;
     }
 
     public Nikname nikname() {

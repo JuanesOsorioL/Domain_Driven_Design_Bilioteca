@@ -3,11 +3,13 @@ package co.com.sofka.Persona;
 import co.com.sofka.Persona.events.*;
 import co.com.sofka.Persona.values.*;
 import co.com.sofka.domain.generic.AggregateEvent;
+import co.com.sofka.domain.generic.DomainEvent;
+
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
 public class Persona extends AggregateEvent<PersonaId> {
-
 
     protected PersonaId personaId;
     protected Nombre nombre;
@@ -19,8 +21,18 @@ public class Persona extends AggregateEvent<PersonaId> {
 
     public Persona(PersonaId personaId, Nombre nombre, Edad edad,Genero genero,Correo correo){
         super(personaId);
-        subscribe(new PersonaChange(this));
         appendChange(new PersonaCreada(nombre, edad, genero, correo)).apply();
+    }
+
+    public Persona( PersonaId personaId) {
+        super(personaId);
+        subscribe(new PersonaChange(this));
+    }
+
+    public static Persona from(PersonaId personaId, List<DomainEvent> events){
+        var persona = new Persona(personaId);
+        events.forEach(persona::applyEvent);
+        return persona;
     }
 
     public void agregarEmpleado(EmpleadoId empleadoId, Funcion funcion){
@@ -43,11 +55,11 @@ public class Persona extends AggregateEvent<PersonaId> {
         appendChange(new EmpleadoFuncionModificado(empleadoId, funcion));
     }
 
-    public void ModificarNiknameUsuario(UsuarioId usuarioId, Nikname nikname){
+    public void modificarNiknameUsuario(UsuarioId usuarioId, Nikname nikname){
         appendChange(new NiknameUsuarioModificado(usuarioId, nikname));
     }
 
-    public void ModificarPasswordUsuario(UsuarioId usuarioId, Password password){
+    public void modificarPasswordUsuario(UsuarioId usuarioId, Password password){
         appendChange(new PasswordUsuarioModificado(usuarioId, password));
     }
 
@@ -57,12 +69,12 @@ public class Persona extends AggregateEvent<PersonaId> {
 
     public Optional<Empleado> buscarEmpleadoPorId(EmpleadoId empleadoId){
         return Empleado.stream()
-                .filter(Empleado->Empleado.empleadoId().equals(empleadoId)).findFirst();
+                .filter(Empleado->Empleado.identity().equals(empleadoId)).findFirst();
     }
 
     public Optional<Usuario> buscarUsuarioPorId(UsuarioId usuarioId){
         return Usuario.stream()
-                .filter(Usuario->Usuario.usuarioId().equals(usuarioId)).findFirst();
+                .filter(Usuario->Usuario.identity().equals(usuarioId)).findFirst();
     }
 
     public PersonaId personaId() {
