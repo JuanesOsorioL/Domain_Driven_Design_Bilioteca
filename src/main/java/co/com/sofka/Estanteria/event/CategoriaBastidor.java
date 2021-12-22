@@ -5,8 +5,8 @@ import co.com.sofka.Estanteria.value.EstanteriaId;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class CategoriaBastidor extends DomainEvent {
-    private EstanteriaId estanteriaId;
-    private Bastidor bastidor;
+    private final EstanteriaId estanteriaId;
+    private final Bastidor bastidor;
 
     public CategoriaBastidor(EstanteriaId estanteriaId, Bastidor bastidor) {
         super("sofka.Estanteria.CategoriaBastidor");

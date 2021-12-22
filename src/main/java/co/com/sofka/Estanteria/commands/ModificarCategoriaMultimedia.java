@@ -4,11 +4,11 @@ import co.com.sofka.Estanteria.value.Categoria;
 import co.com.sofka.Estanteria.value.MultimediaId;
 import co.com.sofka.domain.generic.Command;
 
-public class modificarCategoriaMultimedia extends Command {
+public class ModificarCategoriaMultimedia extends Command {
     private final MultimediaId multimediaId;
     private final Categoria categoria;
 
-    public modificarCategoriaMultimedia(MultimediaId multimediaId, Categoria categoria) {
+    public ModificarCategoriaMultimedia(MultimediaId multimediaId, Categoria categoria) {
         this.multimediaId = multimediaId;
         this.categoria = categoria;
     }

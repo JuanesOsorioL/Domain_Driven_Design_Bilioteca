@@ -5,8 +5,8 @@ import co.com.sofka.Estanteria.value.RevistaId;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class CategoriaRevistaModificado extends DomainEvent {
-    private RevistaId revistaId;
-    private Categoria categoria;
+    private final RevistaId revistaId;
+    private final Categoria categoria;
 
     public CategoriaRevistaModificado(RevistaId revistaId, Categoria categoria) {
         super("sofka.Revista.CategoriaRevistaModificado");

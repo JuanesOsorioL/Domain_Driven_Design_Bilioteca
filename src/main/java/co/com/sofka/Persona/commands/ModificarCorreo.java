@@ -4,11 +4,11 @@ import co.com.sofka.Persona.values.Correo;
 import co.com.sofka.Persona.values.PersonaId;
 import co.com.sofka.domain.generic.Command;
 
-public class modificarCorreo extends Command {
+public class ModificarCorreo extends Command {
     private final PersonaId personaId;
     private final Correo correo;
 
-    public modificarCorreo(PersonaId personaId, Correo correo) {
+    public ModificarCorreo(PersonaId personaId, Correo correo) {
         this.personaId = personaId;
         this.correo = correo;
     }

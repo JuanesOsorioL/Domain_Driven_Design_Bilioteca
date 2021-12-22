@@ -4,11 +4,11 @@ import co.com.sofka.Persona.values.EmpleadoId;
 import co.com.sofka.Persona.values.Funcion;
 import co.com.sofka.domain.generic.Command;
 
-public class modificarFuncionEmpleado extends Command {
+public class ModificarFuncionEmpleado extends Command {
     private final EmpleadoId empleadoId;
     private final Funcion funcion;
 
-    public modificarFuncionEmpleado(EmpleadoId empleadoId, Funcion funcion) {
+    public ModificarFuncionEmpleado(EmpleadoId empleadoId, Funcion funcion) {
         this.empleadoId = empleadoId;
         this.funcion = funcion;
     }

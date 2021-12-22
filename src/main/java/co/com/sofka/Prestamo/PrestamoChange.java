@@ -1,6 +1,8 @@
 package co.com.sofka.Prestamo;
 
 import co.com.sofka.Prestamo.events.PrestamoCreado;
+import co.com.sofka.Prestamo.events.EstadoCambiado;
+import co.com.sofka.Prestamo.events.EstanteriaAsociada;
 import co.com.sofka.domain.generic.EventChange;
 
 public class PrestamoChange extends EventChange {
@@ -14,7 +16,12 @@ public class PrestamoChange extends EventChange {
             prestamo.registroId=event.getRegistroId();
         });
 
+        apply((EstadoCambiado event) -> {
+          prestamo.estado=event.getEstado();
+        });
 
-
+        apply((EstanteriaAsociada event) -> {
+            prestamo.estanteriaId=event.getEstanteriaId();
+        });
     }
 }

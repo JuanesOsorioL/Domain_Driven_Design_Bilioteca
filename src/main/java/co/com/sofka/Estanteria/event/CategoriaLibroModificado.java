@@ -5,8 +5,8 @@ import co.com.sofka.Estanteria.value.LibroId;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class CategoriaLibroModificado extends DomainEvent {
-    private LibroId libroId;
-    private Categoria categoria;
+    private final LibroId libroId;
+    private final Categoria categoria;
 
     public CategoriaLibroModificado(LibroId libroId, Categoria categoria) {
         super("sofka.Libro.CategoriaLibroModificado");

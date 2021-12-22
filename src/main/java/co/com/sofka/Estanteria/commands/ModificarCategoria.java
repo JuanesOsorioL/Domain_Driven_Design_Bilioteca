@@ -1,24 +1,23 @@
 package co.com.sofka.Estanteria.commands;
 
-import co.com.sofka.Estanteria.value.Bastidor;
+import co.com.sofka.Estanteria.value.Categoria;
 import co.com.sofka.Estanteria.value.EstanteriaId;
 import co.com.sofka.domain.generic.Command;
 
-public class modificarBastidor extends Command {
-
+public class ModificarCategoria extends Command {
     private EstanteriaId estanteriaId;
-    private Bastidor bastidor;
+    private Categoria categoria;
 
-    public modificarBastidor(EstanteriaId estanteriaId, Bastidor bastidor) {
+    public ModificarCategoria(EstanteriaId estanteriaId, Categoria categoria) {
         this.estanteriaId = estanteriaId;
-        this.bastidor = bastidor;
+        this.categoria = categoria;
     }
 
     public EstanteriaId getEstanteriaId() {
         return estanteriaId;
     }
 
-    public Bastidor getBastidor() {
-        return bastidor;
+    public Categoria getCategoria() {
+        return categoria;
     }
 }

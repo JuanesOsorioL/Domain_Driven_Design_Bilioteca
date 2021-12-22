@@ -4,6 +4,8 @@ package co.com.sofka.Prestamo;
 import co.com.sofka.Estanteria.value.EstanteriaId;
 import co.com.sofka.Persona.values.PersonaId;
 import co.com.sofka.Prestamo.events.PrestamoCreado;
+import co.com.sofka.Prestamo.events.EstadoCambiado;
+import co.com.sofka.Prestamo.events.EstanteriaAsociada;
 import co.com.sofka.Prestamo.values.Estado;
 import co.com.sofka.Prestamo.values.PrestamoId;
 import co.com.sofka.Prestamo.values.RegistroId;
@@ -21,7 +23,7 @@ public class Prestamo extends AggregateEvent<PrestamoId> {
     protected Estado estado;
     protected RegistroId registroId;
 
-    public Prestamo( PrestamoId prestamoId, PersonaId personaId, EstanteriaId estanteriaId, Estado estado, RegistroId registroId) {
+    public Prestamo(PrestamoId prestamoId, PersonaId personaId, EstanteriaId estanteriaId, Estado estado, RegistroId registroId) {
         super(prestamoId);
         appendChange(new PrestamoCreado(personaId, estanteriaId, estado, registroId)).apply();
     }
@@ -36,6 +38,15 @@ public class Prestamo extends AggregateEvent<PrestamoId> {
         events.forEach(prestamo::applyEvent);
         return prestamo;
     }
+
+    public void cambiarEstado(Estado estado){
+        appendChange(new EstadoCambiado(estado)).apply();
+    }
+
+    public void asociarEstanteria(EstanteriaId estanteriaId){
+        appendChange(new EstanteriaAsociada(estanteriaId)).apply();
+    }
+
 
     public PrestamoId prestamoId() {
         return prestamoId;

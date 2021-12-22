@@ -5,8 +5,8 @@ import co.com.sofka.Estanteria.value.Nombre;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class NombreLibroModificado extends DomainEvent {
-    private LibroId libroId;
-    private Nombre nombre;
+    private final LibroId libroId;
+    private final Nombre nombre;
 
     public NombreLibroModificado(LibroId libroId, Nombre nombre) {
         super("sofka.Libro.NombreLibroModificado");

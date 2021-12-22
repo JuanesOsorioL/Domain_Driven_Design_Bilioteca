@@ -6,13 +6,13 @@ import co.com.sofka.Estanteria.value.LibroId;
 import co.com.sofka.Estanteria.value.Nombre;
 import co.com.sofka.domain.generic.Command;
 
-public class gregarLibro extends Command {
+public class AgregarLibro extends Command {
     private final LibroId libroId;
     private final Autor autor;
     private final Categoria categoria;
     private final Nombre nombre;
 
-    public gregarLibro(LibroId libroId, Autor autor, Categoria categoria, Nombre nombre) {
+    public AgregarLibro(LibroId libroId, Autor autor, Categoria categoria, Nombre nombre) {
         this.libroId = libroId;
         this.autor = autor;
         this.categoria = categoria;
