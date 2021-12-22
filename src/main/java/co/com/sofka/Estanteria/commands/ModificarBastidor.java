@@ -6,8 +6,8 @@ import co.com.sofka.domain.generic.Command;
 
 public class ModificarBastidor extends Command {
 
-    private EstanteriaId estanteriaId;
-    private Bastidor bastidor;
+    private final EstanteriaId estanteriaId;
+    private final Bastidor bastidor;
 
     public ModificarBastidor(EstanteriaId estanteriaId, Bastidor bastidor) {
         this.estanteriaId = estanteriaId;

@@ -5,8 +5,8 @@ import co.com.sofka.Estanteria.value.RevistaId;
 import co.com.sofka.domain.generic.Command;
 
 public class ModificarCategoriaRevista extends Command {
-    private RevistaId revistaId;
-    private Categoria categoria;
+    private final RevistaId revistaId;
+    private final Categoria categoria;
 
     public ModificarCategoriaRevista(RevistaId revistaId, Categoria categoria) {
         this.revistaId = revistaId;

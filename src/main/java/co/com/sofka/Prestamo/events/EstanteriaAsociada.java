@@ -4,10 +4,10 @@ import co.com.sofka.Estanteria.value.EstanteriaId;
 import co.com.sofka.domain.generic.DomainEvent;
 
 public class EstanteriaAsociada extends DomainEvent {
-    private EstanteriaId estanteriaId;
+    private final EstanteriaId estanteriaId;
 
     public EstanteriaAsociada(EstanteriaId estanteriaId) {
-        super("sofka.Estanteria.estanteriaAsociada");
+        super("sofka.Prestamo.estanteriaAsociada");
         this.estanteriaId = estanteriaId;
     }
 

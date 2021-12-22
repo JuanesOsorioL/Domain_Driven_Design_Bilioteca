@@ -4,7 +4,7 @@ import co.com.sofka.Prestamo.values.Estado;
 import co.com.sofka.domain.generic.Command;
 
 public class CambiarEstado extends Command {
-    private Estado estado;
+    private final Estado estado;
 
     public CambiarEstado(Estado estado) {
         this.estado = estado;

@@ -7,10 +7,10 @@ import co.com.sofka.Persona.values.Nombre;
 import co.com.sofka.domain.generic.Command;
 
 public class CrearPersona extends Command {
-    private Nombre nombre;
-    private Edad edad;
-    private Genero genero;
-    private Correo correo;
+    private final Nombre nombre;
+    private final Edad edad;
+    private final Genero genero;
+    private final Correo correo;
 
     public CrearPersona(Nombre nombre, Edad edad, Genero genero, Correo correo) {
         this.nombre = nombre;

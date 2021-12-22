@@ -5,8 +5,8 @@ import co.com.sofka.Estanteria.value.EstanteriaId;
 import co.com.sofka.domain.generic.Command;
 
 public class ModificarCategoria extends Command {
-    private EstanteriaId estanteriaId;
-    private Categoria categoria;
+    private final EstanteriaId estanteriaId;
+    private final Categoria categoria;
 
     public ModificarCategoria(EstanteriaId estanteriaId, Categoria categoria) {
         this.estanteriaId = estanteriaId;

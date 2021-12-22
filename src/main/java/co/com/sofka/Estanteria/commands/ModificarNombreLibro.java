@@ -6,8 +6,8 @@ import co.com.sofka.domain.generic.Command;
 
 public class ModificarNombreLibro extends Command {
 
-    private LibroId libroId;
-    private Nombre nombre;
+    private final LibroId libroId;
+    private final Nombre nombre;
 
     public ModificarNombreLibro(LibroId libroId, Nombre nombre) {
         this.libroId = libroId;

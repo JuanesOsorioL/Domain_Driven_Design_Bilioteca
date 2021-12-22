@@ -7,14 +7,14 @@ import co.com.sofka.Prestamo.values.PrestamoId;
 import co.com.sofka.Prestamo.values.RegistroId;
 import co.com.sofka.domain.generic.Command;
 
-public class CrearPersona extends Command {
-    private PrestamoId prestamoId;
-    private PersonaId personaId;
-    private EstanteriaId estanteriaId;
-    private Estado estado;
-    private RegistroId registroId;
+public class CrearPrestamo extends Command {
+    private final PrestamoId prestamoId;
+    private final PersonaId personaId;
+    private final EstanteriaId estanteriaId;
+    private final Estado estado;
+    private final RegistroId registroId;
 
-    public CrearPersona(PrestamoId prestamoId, PersonaId personaId, EstanteriaId estanteriaId, Estado estado, RegistroId registroId) {
+    public CrearPrestamo(PrestamoId prestamoId, PersonaId personaId, EstanteriaId estanteriaId, Estado estado, RegistroId registroId) {
 
         this.prestamoId = prestamoId;
         this.personaId = personaId;

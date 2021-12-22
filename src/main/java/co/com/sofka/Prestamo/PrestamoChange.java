@@ -1,5 +1,6 @@
 package co.com.sofka.Prestamo;
 
+import co.com.sofka.Prestamo.events.PersonaAsociada;
 import co.com.sofka.Prestamo.events.PrestamoCreado;
 import co.com.sofka.Prestamo.events.EstadoCambiado;
 import co.com.sofka.Prestamo.events.EstanteriaAsociada;
@@ -22,6 +23,10 @@ public class PrestamoChange extends EventChange {
 
         apply((EstanteriaAsociada event) -> {
             prestamo.estanteriaId=event.getEstanteriaId();
+        });
+
+        apply((PersonaAsociada event) -> {
+            prestamo.personaId=event.getPersonaId();
         });
     }
 }

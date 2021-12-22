@@ -4,7 +4,7 @@ import co.com.sofka.Estanteria.value.EstanteriaId;
 import co.com.sofka.domain.generic.Command;
 
 public class AsociarEstanteria extends Command {
-    private EstanteriaId estanteriaId;
+    private final EstanteriaId estanteriaId;
 
     public AsociarEstanteria(EstanteriaId estanteriaId) {
         this.estanteriaId = estanteriaId;

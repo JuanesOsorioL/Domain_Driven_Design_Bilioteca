@@ -3,6 +3,7 @@ package co.com.sofka.Prestamo;
 
 import co.com.sofka.Estanteria.value.EstanteriaId;
 import co.com.sofka.Persona.values.PersonaId;
+import co.com.sofka.Prestamo.events.PersonaAsociada;
 import co.com.sofka.Prestamo.events.PrestamoCreado;
 import co.com.sofka.Prestamo.events.EstadoCambiado;
 import co.com.sofka.Prestamo.events.EstanteriaAsociada;
@@ -45,6 +46,10 @@ public class Prestamo extends AggregateEvent<PrestamoId> {
 
     public void asociarEstanteria(EstanteriaId estanteriaId){
         appendChange(new EstanteriaAsociada(estanteriaId)).apply();
+    }
+
+    public void asociarPersona(PersonaId personaId){
+        appendChange(new PersonaAsociada(personaId)).apply();
     }
 
 

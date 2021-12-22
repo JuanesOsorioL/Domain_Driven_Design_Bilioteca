@@ -7,7 +7,7 @@ public class EstadoCambiado extends DomainEvent {
     private final Estado estado;
 
     public EstadoCambiado(Estado estado) {
-        super("sofka.Estado.estadoCambiado");
+        super("sofka.Prestamo.estadoCambiado");
         this.estado = estado;
     }
 
