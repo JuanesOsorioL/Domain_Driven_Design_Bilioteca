@@ -1,8 +1,8 @@
 package co.com.sofka.Prestamo.values;
 
-import co.com.sofka.Generico.Id;
+import co.com.sofka.domain.generic.Identity;
 
-public class RegistroId extends Id {
+public class RegistroId extends Identity {
 
     private RegistroId(String value){
         super(value);

@@ -1,8 +1,9 @@
 package co.com.sofka.Prestamo.values;
 
-import co.com.sofka.Generico.Id;
 
-public class PrestamoId extends Id {
+import co.com.sofka.domain.generic.Identity;
+
+public class PrestamoId extends Identity {
 
     private PrestamoId(String value){
         super(value);
